@@ -1,0 +1,107 @@
+<html>
+	<head>
+    <title>Post Berita</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+		<style>
+			h1{
+				margin: 0; text-align: center; margin-bottom: 30px;
+				font-weight:1000; font-size: 28px; color: fff45b;
+			}
+			input{
+				display:block; padding:15px 20px;margin-bottom:15px;
+				width: 100%; box-sizing:border-box;
+				border:#C8E6C9 solid 1px; background:#FFF;
+			}
+			input:focus{
+				background: #E8F5E9;
+			}
+		</style>
+	</head>
+
+	<body>
+    <!-- Navbar Start -->
+		<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="static\personal\img\news.png"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Portal<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'berita' %}">Berita</a></li>
+            <li><a href="{% url 'bekonomi' %}">Ekonomi</a></li>
+            <li><a href="{% url 'btekno' %}">Teknologi</a></li>
+            <li><a href="{% url 'bsains' %}">Pengetahuan</a></li>
+          </ul>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+      </ul>
+    </div>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- Start Header -->
+    <div class="header-wrapper2">
+      <div class="header3">
+        <div class="container">
+          <div class="title">
+            <h1><!-- Ini masukin judul berita --></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End header -->
+
+    <div class="container">
+			{% block content %}
+			{% endblock %}
+    </div>
+
+    <!-- Ini udah mulai area penginputan text -->
+		<form action="proses/proses_komentar.py" method="POST">
+      <!-- Pake post soalnya kita mengirim data melalui file bukan urlnya
+            Tujuan datanya kemana mau di submit (action)-->
+      <p> </p></br>
+      <div class="container">
+      <form action="proses/proses_komentar.py" method="POST">
+        <div class="form-group">
+          <label for="user">Username:</label>
+          <input type="text" name="user" placeholder="username" required>
+        </div>
+        <div class="form-group">
+          <label for="comment">Comment:</label>
+          <textarea class="form-control" rows="5" id="comment" required></textarea>
+        </div>
+        <button type="submit" class="btn custom-btn-header">Submit</button>
+    </form>
+  </div>
+      <!-- Input area end -->
+
+      <!-- Start Footer -->
+      <footer class="footer-wrapper">
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <span class="copyright">&copy; Copyright <a href="#">Kelompok Adit, Sasqia & Yeni </a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Footer -->
+
+		</form>
+
+	</body>
+</html>

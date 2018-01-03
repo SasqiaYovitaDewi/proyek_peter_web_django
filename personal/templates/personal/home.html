@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Home</title>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+     <!-- bootstrap CSS -->
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poiret+One" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/linearis.css">
+
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="static\personal\img\news.png"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li  class="active"><a href="home.html">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Portal<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'berita' %}">Berita</a></li>
+            <li><a href="{% url 'bekonomi' %}">Ekonomi</a></li>
+            <li><a href="{% url 'btekno' %}">Teknologi</a></li>
+            <li><a href="{% url 'bsains' %}">Pengetahuan</a></li>
+          </ul>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+      </ul>
+    </div>
+    </nav>
+    <!-- Navbar Selesai -->
+
+    <!-- Start Header -->
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="container">
+          <div class="title">
+            <h1>Potal Berita DiNiA</h1>
+          </div>
+          <p class="description">
+            Ini adalah template home utama untuk tugas proyek matakuliah pemrograman interpreter-django
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End header -->
+
+    <!-- Start Intro -->
+    <div class="intro-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 icon-home">
+            <div class="circle-icon">
+              <span class="lnr lnr-question-circle"></span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="subtitle">About This Website</h2>
+            <p>Website ini dibangun untuk memenuhi tugas matakuliah pemrograman interpreter</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="subtitle">Contact This Website</h2>
+            <p>Jika ada yang ingin dibicarakan mengenai pengembangan website ini, user lain dapat menghubungi admin dengan cara mengklik menu Contact pada navbar</p>
+          </div>
+          <div class="col-md-6 icon-home">
+            <div class="circle-icon">
+              <span class="lnr lnr-phone"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Intro  -->
+
+    <!-- Start category -->
+    <div class="category-wrapper">
+      <div class="category">
+        <div class="container">
+          <h2 class="subtitle text-center">News</h2>
+          <ul class="category">
+            <li class="item">
+              <a href="{% url 'berita' %}"><span class="lnr lnr-file-empty"></span>Berita</a>
+            </li>
+            <li class="item">
+              <a href="{% url 'bekonomi' %}"><span class="lnr lnr-diamond"></span>Ekonomi</a>
+            </li>
+            <li class="item">
+              <a href="{% url 'btekno' %}"><span class="lnr lnr-smartphone"></span>Teknologi</a>
+            </li>
+            <li class="item">
+              <a href="{% url 'bsains' %}"><span class="lnr lnr-magnifier"></span>Pengetauan</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Category -->
+
+    <!-- Start Footer -->
+    <footer class="footer-wrapper">
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <span class="copyright">&copy; Copyright <a href="#">Kelompok Adit, Sasqia & Yeni </a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+  </body>
+</html>

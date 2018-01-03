@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portal Sosial</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <!-- Navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="static\personal\img\news.png"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li class="active" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Berita<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'bpolitik' %}">Politik</a></li>
+          <li><a href="{% url 'btekno' %}">Teknologi</a></li>
+          <li class="active"><a href="{% url 'bsosi' %}">Sosial</a></li>
+          <li><a href="{% url 'bentertain' %}">Entertaiment</a></li>
+        </ul>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+      <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+    </ul>
+  </div>
+</nav>
+    <!-- Navbar Selesai -->
+
+    <!-- Start Header -->
+    <div class="header-wrapper2">
+      <div class="header2">
+        <div class="container">
+          <div class="title">
+            <h1>Sosial</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End header -->
+
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <!-- Start Footer -->
+    <footer class="footer-wrapper">
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <span class="copyright">&copy; Copyright <a href="#">Kelompok Adit, Sasqia & Yeni </a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+  </body>
+</html>
